@@ -1,0 +1,265 @@
+:root{
+    --bg-color:#333853;
+    --text-color: #A3A6B5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+h1{
+    font-size: 3em;
+}
+h2{
+    font-size: 5em;
+}
+h3{
+    font-size: 3em;
+    text-align: center;
+}
+h4{
+    position: absolute;
+    bottom: -50px;
+    margin: 20px 0 0;
+}
+html,body,section{
+    overflow-x: hidden;
+}
+body{
+    background-color: var(--bg-color);
+
+}
+
+#timer,
+ #work, 
+ #pause,
+ #end{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: 1s all;
+}
+
+#start{
+    max-width: 250px;
+    padding:15px 50px;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    font-size: 1.2em;
+    box-shadow: 5px 5px 10px #0f0f0f;
+    border-color: transparent;
+    transition: 0.8s all;
+    cursor: pointer;
+    margin: 25px 0;
+}
+#start:hover{
+    background-color: #5f6485;
+} 
+
+#timer, #end{
+    max-width: 1000px;
+    margin: auto;
+}
+#work, #pause{
+    display: none;
+    max-width: 800px;
+    margin: auto;
+}
+#end{
+    display: none;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+.timer-box{
+    display: flex;
+    margin: 50px 0;
+}
+.timer-arrows{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.timer-card{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 20px;
+    background-color: var(--bg-color);
+    box-shadow: 5px 5px 10px #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+img{
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.circle{
+    background-color: var(--bg-color);
+    box-shadow: 5px 5px 10px #0f0f0f;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle-small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #229354;
+}
+
+.work-text h3{
+    color: #229354;
+    margin-bottom: 20px;
+}   
+
+button:not(start){
+    background-color: var(--bg-color);
+    font-size: 35px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #0f0f0f;
+    cursor: pointer;
+    border: 1px solid transparent;
+    outline: none;
+}
+button:hover{
+    background-color: #5f6485;
+}
+.work-text, .pause-text{
+    text-align: center;
+    width: 230px;
+}
+#work h3,
+ #pause h3{
+    margin-left: 30px;
+}
+#pause h3{
+    color: #adb904;
+}
+#pause .circle-small{
+    border: 5px solid #adb904;
+}
+#end h2{
+    color: #b90404;
+}
+
+#end .circle-small{
+    border: 5px solid #b90404;
+}
+
+@media (max-width: 992px){
+    .timer-card{
+        width: 150px;
+        height: 150px;
+    }
+    .circle{
+        width: 250px;
+        height: 250px;
+    }
+    .circle-small{
+        width: 180px;
+        height: 180px;
+    }
+    h2{
+        font-size: 3.5em;
+    }
+}
+@media (max-width: 700px){
+    .timer-card{
+        width: 100px;
+        height: 100px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    h2{
+        font-size: 4em;
+    }
+    h3{
+        font-size: 2.5em;
+        margin-top: 50px;
+    }
+    #start{
+        font-size: 1em;
+        padding: 10px 25px;
+    }
+    img{
+        width: 40px;
+        height: auto;
+    }
+   #start-work{
+       font-size: 1em;
+       padding: 10px 20px;
+   }
+   .circle{
+    width: 250px;
+    height: 250px;
+    }
+    .circle-small{
+        width: 200px;
+        height: 200px;
+    }
+   
+   #work h3,
+   #pause h3{
+       margin-left: 0;
+   }
+   #work .container, 
+   #pause .container,
+   #end .container {
+       padding-top: 0;
+       flex-direction: column;
+       align-items: center;
+       margin-top: 30px;
+   }
+}
+@media (max-width: 480px){
+    .container{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .timer-card{
+        width: 200px;
+        height: 200px;
+    }
+   
+    h1{
+        padding-top: 20px ;
+        font-size: 2.5em;
+    }
+  
+    h4{
+        font-size: 1.2em;
+    }
+    #start{
+        font-size: 0.875em;
+        padding: 10px 25px;
+    }
+    img{
+        width: 40px;
+        height: auto;
+    }
+}
